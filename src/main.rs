@@ -1,5 +1,5 @@
 /*
-Solves the train game (specified below) by brute force, using 16 threads.
+Solves the train game (specified below) by brute force.
 
 Take the four digits of the car number you are on and try to make 10.
 
