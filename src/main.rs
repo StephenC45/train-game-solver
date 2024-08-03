@@ -67,16 +67,16 @@ fn main() -> Result<(), String> {
 
     // Calculate all combinations of digits and operators.
     let length = &digits_operators.len();
-    let mut valid_combinations = 0;
-    for ((digits, operators), factorial_places) in digits_operators {
-        if let Ok(result) = calculate(&digits, &operators, &factorial_places, &factorial_cache) {
+    let mut valid_count = 0;
+    for ((digits, operators), f_positions) in digits_operators {
+        if let Ok(result) = calculate(&digits, &operators, &f_positions, &factorial_cache) {
             if result == 10 {
-                valid_combinations += 1;
+                valid_count += 1;
             }
         }
     }
 
-    eprintln!("{} of {} combinations are valid.", valid_combinations, length);
+    eprintln!("{} of {} combinations for car {} are valid.", valid_count, input_arg, length);
     Ok(())
 }
 
