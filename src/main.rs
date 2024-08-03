@@ -76,7 +76,7 @@ fn main() -> Result<(), String> {
         }
     }
 
-    eprintln!("\n{} of {} combinations are valid.", valid_combinations, length);
+    eprintln!("{} of {} combinations are valid.", valid_combinations, length);
     Ok(())
 }
 
