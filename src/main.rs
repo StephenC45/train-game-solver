@@ -3,16 +3,17 @@ Solves the train game (specified below) by brute force.
 
 Take the four digits of the car number you are on and try to make 10.
 
-Not implemented: factorial.
-
 Implementation-specific rules:
 - 0 to the power of 0 is undefined.
 - Operands for division must be exactly divisible.
 - d/dx is not permitted.
 - base conversion is not permitted.
 
+Note: this program won't find all possible combinations to make 10 with the 
+given digits and operators.
+
 Written by Stephen.
-Last updated 31 July 2024.
+Last updated 3 August 2024.
 */
 
 
@@ -54,9 +55,7 @@ fn main() -> Result<(), String> {
 
     // Get an iterator over every arrangement of digits and every arrangement of 
     // operators.
-    let digits_operators: Vec<((Vec<i128>, Vec<&str>), Vec<bool>)> = std::env::args()
-        .nth(1)
-        .unwrap()
+    let digits_operators: Vec<((Vec<i128>, Vec<&str>), Vec<bool>)> = input_arg
         .chars()
         .map(|x| x.to_digit(10).unwrap() as i128)
         .permutations(4)
@@ -77,7 +76,7 @@ fn main() -> Result<(), String> {
         }
     }
 
-    println!("\n{} of {} combinations are valid.", valid_combinations, length);
+    eprintln!("\n{} of {} combinations are valid.", valid_combinations, length);
     Ok(())
 }
 

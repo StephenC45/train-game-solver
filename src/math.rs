@@ -1,5 +1,8 @@
 /*
 Library for train game functions.
+
+Written by Stephen.
+Last updated 3 August 2024.
 */
 
 
@@ -47,7 +50,7 @@ pub fn factorial(num1: i128, cache: &Vec<i128>) -> Result<i128, ()> {
 }
 
 
-// Safer bit shift.
+// Safer bit shift on 128-bit integers.
 pub fn safe_shift(num1: i128, num2: i128, op: &str) -> Result<i128, ()> {
     if num2 > 128 {
         Err(())
