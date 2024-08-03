@@ -76,7 +76,7 @@ fn main() -> Result<(), String> {
         }
     }
 
-    eprintln!("{} of {} combinations for car {} are valid.", valid_count, input_arg, length);
+    eprintln!("{} of {} combinations for car {} are valid.", valid_count, length, input_arg);
     Ok(())
 }
 
